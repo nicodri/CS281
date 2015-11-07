@@ -40,7 +40,7 @@
 \normalfont \normalsize 
 \textsc{Harvard University} \\[25pt]
 \textsc{CS281} \\[25pt]
-\horrule{0.5pt} \\[0.4cm] 
+\horrule{0.5pt} \\[0.1cm] 
 \huge Final Project Update: \\
 \huge Classification for the Yelp Data Set Challenge
 \horrule{2pt} \\[0.5cm]
@@ -58,11 +58,13 @@
 
 \section{Abstract Draft}
 
+Our objective is to improve the categorization system of the Yelp businesses using machine learning techniques. To achieve our goal, we will extract significant information out of the text reviews posted on Yelp using a semi-supervised Latent Dirichlet Allocation model. We will then combine these results with characteristic features of the business - such as localizations, price, customer type, check-in data - and predict the categories with two approaches: a classification with a Multinomial Logistic Regression and a clustering method with a K-Nearest Neighbors. We will provide a way to assess the quality of our new categories. On one hand, we will validate existing categories by holding out a set a venues, perform predictions and compare with the existing manually-entered categories. On the other hand, we will assess the performance of the LDA model using the perplexity metric.
+
 \section{Numerical processing and first clustering experiments}
 
 \subsection{Numerical Feature Extraction}
 
-This part works with two tables of the Yelp data: business and checkin. The first one stores information about the business (localizations, name, categories ...) and the second contains the average number of customers checkins for each hour of the week.\\
+This part focuses on two tables from the Yelp data: business and checkin. The first one stores information about the businesses (localizations, name, categories ...) and the second contains the average number of customers checkins for each hour of the week.\\
 
 We joined and converted these two tables in order to have only numerical or binary features and applied different operations:
 \begin{itemize}
@@ -72,9 +74,9 @@ We joined and converted these two tables in order to have only numerical or bina
 \end{itemize}
 On top of these steps, we chosed to focus first on the restaurants (the yelp data set contains reviews about dentists, supermarkets, etc.). Also to build easily our first baselines we chosed not to handle the missing values and droped the business with not enough information.\\
 
-The result is the data set of the Yelp restaurants with 205 features relatives to the customers checkins and the inherent properties of the restaurants. We will test these features under supervised learning algorithms.\\
+We therefore reformatted and sampled the original data set to form a new one with 205 features relatives to the customers checkins and the inherent properties of the restaurants. We will test these features under supervised learning algorithms.\\
 
-Some improvement might be considered:
+Some improvements still need to be addressed:
 \begin{itemize}
 	\item Combining features and/or applying them polynomial or cosinus base function to increase their complexity
 	\item Considering more attributes and the business where we don't have the checkin information while filling the missing values. This inference can be done through the average or median values over the entire data set, or through a nearest neighbors estimation.
@@ -82,11 +84,9 @@ Some improvement might be considered:
 
 \subsection{Supervised Learning} 
 
-Considering the data set built with the processing with numerical features. We applied a multiclass logistic regression from scikit learn. \\
+We applied a multiclass logistic regression from scikit learn as one of our baselines. The first question was to narrow down our targets. In the restaurants entries, there are still 261 different categories shared. As the text mining of the reviews seemed more complicated, we needed to consider the most diffenriating categories to have decent models. As a result, we focused on the nationality of the food to test among the restaurants.\\
 
-The first question was to narrow down our targets. In the restaurants entries, there are still 261 different categories shared. As the text mining of the reviews seemed more complicated, we needed to consider the most diffenriating categories to have decent models. As a result, we focused on the nationality of the food to test among the restaurants.\\
-
-With 3 classes: 1 without specific nationality and the two most represented nationalities, Mexican and Chinese, the multiclass logistic regression provided poor results on the test set (the data set was separated in the schema 80:20, train:test), only slightly better than predicting no nationality for each entry (dummy model). The explanations could be that the features do not contain relevant information to differentiate the style and the restaurant set without missing values contains only 13000 entries with around 1000 positive for the two classes.\\\\
+With 3 classes: 1 without specific nationality and the two most represented nationalities, Mexican and Chinese, the multiclass logistic regression provided poor results on the test set (the data set was separated in the schema 80:20, train:test), only slightly better than predicting no nationality for each entry (dummy model). Some explanations could lie in that the features do not contain relevant information to differentiate the style and the restaurant set without missing values contains only 13000 entries with around 1000 positive for the two classes.\\\\
 Precision score:
 \begin{align*}
 	\rho_{dummy} & = 0.671423029551 \\
@@ -94,9 +94,8 @@ Precision score:
 \end{align*}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.45]{ROC.png}
+	\includegraphics[scale=0.35]{ROC.png}
 	\centering
-	\title{Multi class ROC curve}
 \end{figure}
 
 \subsection{Next steps}
@@ -105,17 +104,15 @@ Given the poor results of this part, we will focus on building a strong LDA for 
 
 \section{Text preprocessing and LDA}
 \subsection{Text preprocessing}
-An important part of these first days of work was processing the text reviews on which we would perform LDA. The reviews came in the form of json file with each text review associated to a business id.\\
+ The reviews came in the form of json file with each text review associated to a business id. Inspecting the data, we can find reviews of a line only and reviews much longer. Our motivation for this project is to classify the venues based on the text reviews, so the identity of the reviewers does not matter. We therefore merged the reviews by venues. We reduced the 1.6 million reviews to a corpus of 60785 larger texts, 1 per business. Note that we first had to clean the texts by removing capital letters, digits, etc... \\
 
-Inspecting the data, we can find reviews of a line only and reviews much longer. Our motivation for this project is to classify the venues based on the text reviews, so the identity of the reviewers does not matter. We therefore merged the reviews by venues. We reduced the 1.6 million reviews to a corpus of 60785 larger texts, 1 per business. Note that we first had to clean the texts by removing capital letters, digits, etc... \\
+As LDA uses the bag-of-words assumption, we only wanted to keep words that had a semantic interest. So we removed a list of stop words based on the most common words in the English language yielding a total vocabulary of over 400 thousands unique words. We then transformed the corpus into a sparse matrix for which each row corresponds to a document and column $j$ tracks the count of the word indexed by $j$ in the vocabulary. This step made our computers' ipython kernel crash multiple time but we finally obtained a sparse matrix of size 1 GB.\\
 
-As LDA uses the bag-of-words assumption, we only wanted to keep words that had a semantic interest. So we removed a list of stop words based on the most common words in the English language such as: "is, a, I, 'm, 's, and, can, be, etc...". This yield a total vocabulary of over 400 thousands unique words, which dazzled us at first, but we'll come back on that issue later. We then transformed the corpus into a sparse matrix for which each row corresponds to a document and column $j$ tracks the count of the word indexed by $j$ in the vocabulary. This step made our computers' ipython kernel crash multiple time but we finally obtained a sparse matrix of size 140 GB.\\
-
-Following the choice in the numerical feature processing, we focused only on restaurants . Reprocessing everything yielded a corpus of about 18000 venues, and a total vocabulary of 200 000 words. We then persued to fit a baseline LDA model using the lda 1.0.2 python package. But the computation ended up being way to expensive timewise ( > 8 hours). We subsambled 500 restaurants, which reduced the size of the vocabulary to only $\sim$40 000 words and ran the algorithm again. Completion time for the algorithm was about an hour for 50 topics. Some of the results are shown below:
+Following the choice in the numerical feature processing, we focused only on restaurants. Reprocessing everything yielded a corpus of about 18000 venues, and a total vocabulary of 200 000 words. We then persued to fit a baseline LDA model using the lda python package. But the computation ended up being way to expensive timewise ( > 8 hours). We subsambled 500 restaurants, which reduced the size of the vocabulary to only $\sim$40 000 words and ran the algorithm again. Completion time for the algorithm was about an hour for 50 topics. Some of the results are shown below:
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{first_topics.png}
+\includegraphics[width=0.7\textwidth]{first_topics.png}
 \end{figure}
 
 The topics obtained are very poor and there are numerous reasons for that. The first is that we didn't get the chance to cross-validate the number of topics queried. The second is that we then noticed that we had an issue with the spelling. If any of the TFs have suggestions on how to tackle this issue, we would greatly appreciate it. A third reason might lie in the fact that we are failing to distinguish what constitutes the reviewer's opinion (is it good restaurant? is it bad?) and what is this restaurant about (Italian? Japanese?). This third reason motivated the analysis of a customed LDA model that we will describe below. We haven't yet done any type of analysis but this is the model that we will now focus on and code up. This will alow us to use the regular LDA as a baseline to compare new topics.\\
