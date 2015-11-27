@@ -24,9 +24,9 @@ def get_samples(C, S, max_iter):
     return batches
 
 
-def batch_lda(corpus, vocabulary, lambda_=None, num_topics=10, num_iter=10, alpha=0.5, eta=0.001, threshold=0.000001):
+def batch_lda(corpus, lambda_=None, num_topics=10, num_iter=10, alpha=0.5, eta=0.001, threshold=0.000001):
     '''
-    Batch Variational Inference EM algorithm for LDA.
+    Batch Variational Inference EM algorithm for LDA, goes over all the data at each iteration.
     (from algorithm 1 in Blei 2010)
     corpus is a list of lists of [word_index, count] for each document
     corpus is a matrix of count: (docs, voca)
@@ -63,7 +63,9 @@ def batch_lda(corpus, vocabulary, lambda_=None, num_topics=10, num_iter=10, alph
     return lambda_, gamma_d_k
 
 
-def stochastic_lda(corpus, vocabulary, batches=None, lambda_=None, S=1, num_topics=10, max_iter=300, tau=1, kappa=0.5, alpha=0.5, eta=0.001, threshold=0.000001):
+def stochastic_lda(corpus, batches=None, lambda_=None,
+                   ordering=False, S=1, num_topics=10, max_iter=300, tau=1,
+                   kappa=0.5, alpha=0.5, eta=0.001, threshold=0.000001):
     '''
     Stochastic Variational Inference EM algorithm for LDA.
     (from algorithm 2 in Blei 2010)
@@ -134,3 +136,16 @@ def e_step(d, corpus, gamma_d_k, lambda_, lambda_int, alpha, threshold):
     lambda_int[:, ids] += counts[np.newaxis, :] * phi
 
     return gamma_d_k, lambda_int
+
+
+# Display the selected topics
+def print_topic_words(lambda_, vocabulary, num_topics, num_words):
+    '''
+    Display the first num_words for the topic distribution lambda_ from a
+    vocabulary.
+    '''
+    for t in xrange(num_topics):
+        topic_distribution = sorted([(i, p) for i, p in enumerate(lambda_[t, :])], key=lambda x: x[1], reverse=True)
+        top_words = [vocabulary[tup[0]] for tup in topic_distribution[:num_words]]
+        print 'Topic number ', t
+        print top_words
