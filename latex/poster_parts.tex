@@ -119,5 +119,13 @@ We need a measure to evaluate the performance of our model and to tune the hyper
 
 We used this measure to optimize the number of topics K and the hyper parameters of the optimization of the lower bound.
 
+\subsection*{Next Steps}
+
+So far, we managed to extract the categories of the restaurants as latent features with a latent dirichlet allocation algorithm on the aggregated reviews for each restaurant. \\
+
+A future work could be done on the classification part based on these features: on one hand, clustering the restaurants of different cities and comparing the groups with the existing labels to find new categories or to refine the existing one; on the other hand, we could use the features with classifier to predict the existing categories. \\
+
+As a variant, we could try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses. Lastly, this method is applicable on each review separately to predict the rating of the review, with a supervised lda also to avoid the predominance of the categories in the topics.
+
 
 \end{document}
