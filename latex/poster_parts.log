@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.2)  2 DEC 2015 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.2)  2 DEC 2015 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**assignment_3.tex
-(./assignment_3.tex
+**poster_parts.tex
+(./poster_parts.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -444,8 +444,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks27
 \@floatcapt=\box30
 )
-(./assignment_3.aux)
-\openout1 = `assignment_3.aux'.
+(./poster_parts.aux)
+\openout1 = `poster_parts.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
@@ -589,21 +589,16 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[1
-
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 71.
-
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 67.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
@@ -612,79 +607,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-
- []
+[1
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 91.
+(Font)              scaled to size 10.07397pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 91.
+(Font)              scaled to size 7.63599pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 91.
+(Font)              scaled to size 5.51999pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 91.
+(Font)              scaled to size 10.07397pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 91.
+(Font)              scaled to size 7.63599pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 91.
-[2] <ROC.png, id=11, 578.16pt x 433.62pt>
-File: ROC.png Graphic file (type png)
- <use ROC.png>
-Package pdftex.def Info: ROC.png used on input line 97.
-(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+(Font)              scaled to size 5.51999pt on input line 90.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8.3> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 105.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 105.
 
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-[3 <./ROC.png>] <first_topics.png, id=19, 1111.15125pt x 561.09625pt>
-File: first_topics.png Graphic file (type png)
-
-<use first_topics.png>
-Package pdftex.def Info: first_topics.png used on input line 115.
-(pdftex.def)             Requested size: 292.7776pt x 147.8422pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
-[4 <./first_topics.png>] [5] (./assignment_3.aux) ) 
+[2] [3] (./poster_parts.aux) ) 
 Here is how much of TeX's memory you used:
- 5693 strings out of 493089
- 83795 string characters out of 6134843
+ 5692 strings out of 493089
+ 83754 string characters out of 6134843
  302604 words of memory out of 5000000
- 9029 multiletter control sequences out of 15000+600000
- 94027 words of font info for 104 fonts, out of 8000000 for 9000
+ 9025 multiletter control sequences out of 15000+600000
+ 104367 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,11n,47p,911b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/tex
-mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/fourier/fourier-bb.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/public/fourier/fourier-mlit.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/fourier/fourier-ms.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ado
-be/utopia/putri8a.pfb>
-Output written on assignment_3.pdf (5 pages, 367744 bytes).
+ 46i,10n,47p,1013b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/f
+ourier-mex.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/f
+ourier-mlit.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/
+fourier-ms.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/put
+b8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on poster_parts.pdf (3 pages, 56699 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
