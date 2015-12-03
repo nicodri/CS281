@@ -149,7 +149,7 @@ $$ \text{Online} = 1m13s \quad \text{Gibbs} = 50m $$
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{posterpicture3.jpg}
+\includegraphics[width=0.6\linewidth]{posterpicture4.png}
 \end{figure}
 
 \begin{column}{\twocolwid} % The first column within column 2 (column 2.1)
@@ -225,19 +225,19 @@ $$
 \item The validation indicate that \textbf{50} was the optimum number of topics, some of these topics are plotted in the diagram 
 \item Based on the Shannon distance (symmetric KL divergence) between two documents, we set a threshold of 1 and created the adjacency matrix
 \item In order to inspect the graph and due to its extremely large size ($\>2 10^{6}$ edges), we sampled 500 restaurants having among their tags either "Chinese", "Seafood" or "Mexican"
-\item We ran the walktrap clustering algorithm in R. It initialy found 7 cliques, but a closer insepction of the dendogram, we actually noticed that it subcategories 3 bigger cliques boxed in green, red, and blue, which corresponded almost exactly to the 3 classes of restaurants !
+\item We ran the walktrap clustering algorithm in R. It initialy found 7 cliques, but a closer inspection of the dendogram, we actually noticed that it subcategories 3 bigger cliques boxed in green, red, and blue, which corresponded almost exactly to the 3 classes of restaurants !
 \end{itemize}
 
 
 \end{block}
 \begin{alertblock}{Conclusion}
 \small
-By using a combination of unsupervised learning and graph theory, we managed to retrieve most of the original classification that is up to now still done at hand ! This work could result in an au tomation tool for Yelp to label properly its data based. 
+By using a combination of unsupervised learning and graph theory, we managed to retrieve most of the original classification that is up to now still done by hand ! This work could result in an automation tool for Yelp to label properly its database. 
 \end{alertblock}
 
 \begin{block}{Next steps}\vspace{-0.2in}
 \small
-Futur work could focus on the sub-cliques and try to get a more refine classification by combining them with other features like check-ins, parking availability, etc. As a variant, we could also try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses.
+Futur work could focus on the sub-cliques and try to get a finer classification by combining them with other features like check-ins, parking availability, etc. As a variant, we could also try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses.
 \end{block}
 
 %----------------------------------------------------------------------------------------
