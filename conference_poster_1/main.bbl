@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{LDA}
+M.~Jordan D.~Blei, A.~Ng.
+\newblock {L}atent {D}irichlet {A}llocation.
+\newblock {\em Journal of Machine Learning Research}, 3, 2003.
+
+\bibitem{OLLD}
+D.~Bach M.~Hoffman, D.~Blei.
+\newblock {O}nline {L}earning for {L}atent {D}irichlet allocation.
+\newblock 2010.
+
+\bibitem{Gr}
+M.~Latapy P.~Pons.
+\newblock {C}omputing {Communities} in {L}arge {N}etworks {U}sing {R}andom
+  {W}alks.
+\newblock {\em JGAA}, 2006.
+
+\end{thebibliography}
