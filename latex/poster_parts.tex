@@ -119,5 +119,61 @@ We need a measure to evaluate the performance of our model and to tune the hyper
 
 We used this measure to optimize the number of topics K and the hyper parameters of the optimization of the lower bound.
 
+\subsection*{Next Steps}
+
+So far, we managed to extract the categories of the restaurants as latent features with a latent dirichlet allocation algorithm on the aggregated reviews for each restaurant. \\
+
+A future work could be done on the classification part based on these features: on one hand, clustering the restaurants of different cities and comparing the groups with the existing labels to find new categories or to refine the existing one; on the other hand, we could use the features with classifier to predict the existing categories. \\
+
+As a variant, we could try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses. Lastly, this method is applicable on each review separately to predict the rating of the review, with a supervised lda also to avoid the predominance of the categories in the topics.
+
+
+\section{Classification}
+
+Once the feature has been extracted, we can apply supervised learning methods to classify the Yelp restaurants based on their labels on Yelp. Several approaches are possible with regards to the features to solve this multi-labels classigication task
+
+\subsection*{Features}
+
+The features are divided into two main parts: on one hand, the topics assignements extracted from the reviews with the LDA and on the other hand, the properties provided by Yelp. Pre-processing the latter part provided a 198 dimensionnal vector. These features contain both numerical features (rating, space coordinates, number of reviews, customer check-in...) and categorical features converted into indicator variables.
+
+\subsection*{Methods}
+
+The outputs of our classification are the labels of each restaurant. We chose to train several binary classifiers to predict one label at a time with a One-Vs-All approach. The high dimensionnality of the features and the large number of indicator varibales induces a high sparsity. As a result, a sufficiently robust algorithm need to be used. One particularity is also that the classes are all really skewed, the dummy baseline where we do not predict  any label for all the restaurant has a really high score.\\
+
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    & OVI LDA & GS LDA & NMF \\ \hline
+    All False & 90,02 \% &  90.02 \% &  90.02 \% \\ \hline
+    kernel rbf SVM & 90,81\% &  90.38\% &  90.38\% \\ \hline
+    kernel rbf SVM + PCA & 90.83\% &  90.60\% &  90.57\% \\ \hline
+    Logistic Regression & 90.84\% &  91.89\%  &  91.24\%\\ \hline
+    Logistic Regression + PCA & 92.59\% &  92.53\% &  92.68\% \\ \hline
+    Lasso & 90.82\% &  93.44\% &  92.01\% \\ \hline
+	Lasso + PCA & 93.44\%  &  \textbf{94.46} \%  &  93.08\% \\ \hline
+    Random Forest & 91.90\% &  93.31\% &  92.89\% \\ \hline
+    Random Forest + PCA & 93.63\% &  94.04\% &  93.44\% \\ \hline
+    \end{tabular}
+\end{center}
+
+We first coded a l2 regularized logistic regression and use scikit learn for the other methods. The random forest provides the best predictor expected as it corresponds to an ensemble method that combines multiple decision trees, leading to a more robust model. We showed the ROC curves that we obtained. The variance of the classifiers with regards to the class used as output is quite high. This could be explained by the relative skewness of each class and also their own specificity. Moreover, using dimensionality reduction method on the Yelp check-ins information before the classificationthe PCA also improved the accuracy. These features contains the average number of customers for each hour of the week which leads to a vector of dimension 168. The principal component analysis dropped it down to 13, while keeping 94\% of the variance.
+
+\begin{figure}[H]
+	\includegraphics[scale=0.55]{img/roc_lasso.png}
+	\centering
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[scale=0.55]{img/roc_rf.png}
+	\centering
+\end{figure}
+
+Moreover, this method provides a way to sort the features by importance.\\
+
+FEATURES IMPORTANCE
+
+
+
+
 
 \end{document}
