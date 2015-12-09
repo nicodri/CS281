@@ -137,7 +137,7 @@ To extract content from the reviews, we applied 2  methods from Topic Modeling t
   
 \subsection{Latent Dirichlet Allocation}
 
-The LDA is a three-level hierarchical Bayesian model. The basic idea that documents are represented as random mixtures over latent topics and each topic is characterized by a distribution over words.\\
+The LDA is a three-level hierarchical Bayesian model. The basic idea that documents are represented as random mixtures over latent topics and each topic is characterized by a distribution over words.\cite{LDA}\\
 
 \noindent The generative process for a document \textbf{w} in a corpus D is the following:
 \\
@@ -166,7 +166,7 @@ The main issue relies in computing the posterior distribution of the hidden vari
 p(\theta, \mathbf{z} |\mathbf{w}, \alpha, \beta) = \frac{p(\theta, \mathbf{z}, \mathbf{w} | \alpha, \beta)}{p(\mathbf{w} | \alpha, \beta)}
 \end{align*}
 
-\noindent This distribution is intractable. As mentioned above, we used two  methods to infer it: through a Gibbs sampler or variational inference. In the first case, we are estimating the hyper parameters $\theta$ and $\phi$ with samples on the different variables. Alternatively, we chose the online variational inference method which finds the variational parameters that optimize a lower bound on the loglikelihood. The setup of the Variational Inference is as follows. We first approximate the true posterior by a simpler and factorised distribution:
+\noindent This distribution is intractable. As mentioned above, we used two  methods to infer it: through a Gibbs sampler or variational inference. In the first case, we are estimating the hyper parameters $\theta$ and $\phi$ with samples on the different variables. Alternatively, we chose the online variational inference method which finds the variational parameters that optimize a lower bound on the loglikelihood. The setup \cite{OLLD} of the Variational Inference is as follows. We first approximate the true posterior by a simpler and factorised distribution:
 $$q(\boldsymbol{z},\boldsymbol{\theta},\boldsymbol{\beta}) = q(\boldsymbol{z})q(\boldsymbol{\theta})q(\boldsymbol{\beta}) $$ 
 
 \noindent where:
@@ -239,7 +239,7 @@ Each restaurant is now represented as probability distribution over the latent t
 \noindent We then transformed this adjacency matrix in an unweighted graph and applied the Walktrap algorithm for community detection.\\
 
 \subsection{The WalkTrap Algorithm}
-The WalkTrap Algorithm is a community detection algorithm created by Pascal Pons and Matthieu Latapy. The algortihm runs in time $O(n^2\log n)$ and space $O(n^2)$ where $n$ is the number of vertices in the graph. As mentioned in their paper, "the intuition behind the Walktrap is that random walks on a graph tend to get trapped into densely connected parts corresponding to communities".\cite{Gr} It relies on a new metric used to evaluate the distance between two vertices in a graph:
+The WalkTrap Algorithm is a community detection algorithm created by Pascal Pons and Matthieu Latapy \cite{Gr}. The algortihm runs in time $O(n^2\log n)$ and space $O(n^2)$ where $n$ is the number of vertices in the graph. As mentioned in their paper, "the intuition behind the Walktrap is that random walks on a graph tend to get trapped into densely connected parts corresponding to communities".\cite{Gr} It relies on a new metric used to evaluate the distance between two vertices in a graph:
  $$r_{ij} = \sqrt{\sum\limits_{k=1}^{n}\frac{(P^t_{ik}-P^t_{kj})^2}{d(k)}}$$
  where $P^t_{ik}$ is the transition probability in $t$ steps and $d(k)$ is the degree of node k (number of edges incident to the vertex). We can then generalise this distance between two vertices to a distance between two communities. Using this distance, we can now apply a hierarchical clustering algorithm.
 
