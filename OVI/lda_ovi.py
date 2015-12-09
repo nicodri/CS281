@@ -111,7 +111,7 @@ class LDA:
         '''
         gamma = self.transform(dtm_test, tau, kappa)
         # Normalizing the topics and gamma
-        topics = self.topics/self.topics.sum(axis=0)
+        topics = self.topics/self.topics.sum(axis=1)[:, np.newaxis]
         gamma = gamma/gamma.sum(axis=1)[:, np.newaxis]
 
         if len(gamma.shape) == 1:
