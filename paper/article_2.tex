@@ -200,13 +200,19 @@ $$ q(z_{di} = k) = \phi_{d_{w_{di}k}} \quad q(\theta_d) = \text{Dir}(\theta_d,\g
 We need a measure to evaluate the performance of our model and to tune the hyperparameters. We use perplexity on held-out data as a measure of our model fit. Perplexity is defined as the geometric mean of the log likelihood of the words in the held-out set of docuements given the trained model. In our case, for each document we held out 20\% of the words which constitue the test set.
 
 \begin{align*}
-	perplexity(D_{test}) & = \frac{\sum\limits_{d \in D_{test}} \log p(words)}{\sum\limits_{d \in D_{test}|d|}}\\
-	perplexity(D_{test}) & = \frac{\sum\limits_{d \in D_{test}} \sum\limits_{w \in d} \log \left( \sum_{t \in topics} p(w|t)p(t|d) \right)}{\sum\limits_{d \in D_{test}|d|}}
+	perplexity(D_{test}) & = \frac{\sum\limits_{d \in D_{test}} \log p(words)}{\sum\limits_{d \in D_{test}}|d|}\\
+	perplexity(D_{test}) & = \frac{\sum\limits_{d \in D_{test}} \sum\limits_{w \in d} \log \left( \sum_{t \in topics} p(w|t)p(t|d) \right)}{\sum\limits_{d \in D_{test}}|d|}
 \end{align*}
 
-\noindent We used this measure to optimize the number of topics K and the hyper parameters of the optimization. We also used the perplexity to benchmark our algorithm with the Gibbs sampler in the LDA 1.0.3 package in Python:
+\noindent We used this measure to optimize the number of topics K and the hyper parameters of the optimization. We also used the perplexity on the training set to benchmark our algorithm with the Gibbs sampler in the LDA 1.0.3 package in Python:
 
-$$\text{perp}_{OVI} = XX \quad \text{and} \quad \text{perp}_{GS} = XX$$
+$$\text{perp}_{OVI} = -6.78 \quad \text{and} \quad \text{perp}_{GS} = -6.45$$
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{V.png}
+\caption{Cross Validation over the number of Topics}
+\end{figure}
 
 \subsection{Results}
 Another way to assess the performance of our LDA was to inspect the topics outputted by the algorithm. We present some of the most significant topics:\\
@@ -217,7 +223,12 @@ Another way to assess the performance of our LDA was to inspect the topics outpu
 \caption{Topics extracted from the Las Vegas reviews using OVI}
 \end{figure} 
 
-\noindent We obtained similar results using the NMF approach. The topics themselves were not our primary interested. As mentioned in the introduction, we were using these methods primarly for dimensional reduction purposes. We now present two different approaches to answer the question of classification using supervised and unsupervised machine learning.\\
+\noindent We obtained similar results using the NMF approach. The topics themselves were not our primary interested. As mentioned in the introduction, we were using these methods primarly for dimensional reduction purposes. \\
+
+
+We would like to also make a general comment about the Online Variational algorithm. We noticed that the OVI algorithm is extremely sensitive to the hyperparametrisation, i.e the batch size $S$, the forgetfullness parameter $\kappa$ and the early iterations weith parameter $\tau$. This was also noted by Tamara Broderick, Nicholas Boyd, Andre Wibisono and Ashia C. Wilson in their paper\cite{svi}. In addition to validating the number of topics, validating over these parameters was crucial to obtain valuable resutls.\\
+
+We now present two different approaches to answer the question of classification using supervised and unsupervised machine learning.\\
 
 %------------------------------------------------
 \section{Supervised Classification}
@@ -279,7 +290,7 @@ Running the algorithm from the \emph{igraph} in R, we outputted a dendogram (cf.
 \includegraphics[angle=90,width=0.25\linewidth]{den_ovi2-1.png}
 \caption{Dendogram outputted by the Walktrap Algorithm}
 \end{figure*}
-\newpage
+
 
 \section{Next steps}
 Futur work could focus on the sub-cliques and try to get a finer classification by combining them with other features like check-ins, parking availability, etc. As a variant, we could also try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses.
