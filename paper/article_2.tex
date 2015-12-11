@@ -37,6 +37,7 @@
 \usepackage{amsmath,amsfonts,amsthm}
 \usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+\usepackage{subfigure}% For side by side figure
 
 \usepackage{abstract} % Allows abstract customization
 \renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
@@ -104,7 +105,9 @@ We planned on building latent features from the text reviews which would depict 
 
 \section{Introduction}
 
-\lettrine[nindent=0em,lines=1]{T}he classification system in Yelp is manual. When the owner of a business creates a page for his restaurant or bar, he is asked to enter a certain number of attributes or "tags". Yelp users can then alter or even add some new tags based on their experiences. As part of the Yelp Data Set Challenge Round 6, we decided to tackle the issue of classification with ultimate objective to be able to create an automathised method to classify venues, based on the information contained on the business' webage and most importantly the written reviews from Yelpers. This project can be divided in two parts, the first on Feature Extraction and the second on classification and clustering. In more details, we applied various dimensionality reduction methods such as Latent Dirichlet Allocation (LDA) or Non-negative Matrix Factorisation (NMF) to map the reviews into a geometrical space. We then decided to compare both supervised approaches such as Multinomial Regression and unsupervised approaches, for instance the Walktrap algorithm, to the problem of classification on the Yelp dataset.
+\lettrine[nindent=0em,lines=1]{T}he classification system in Yelp is manual. When the owner of a business creates a page for his restaurant or bar, he is asked to enter a certain number of attributes or "tags". Yelp users can then alter or even add some new tags based on their experiences. As part of the Yelp Data Set Challenge Round 6, we decided to tackle the issue of classification with ultimate objective to be able to create an automatised method to classify venues, based on the information contained on the business' web page and most importantly the written reviews from Yelpers. \\
+
+This project can be divided in two parts, the first on feature extraction and the second on classification and clustering. In more details, we applied various dimensionality reduction methods such as Latent Dirichlet Allocation (LDA) or Non-negative Matrix Factorisation (NMF) to embed the reviews into a geometrical space. We then decided to compare both supervised approaches such as Multinomial Regression and unsupervised approaches, using the Walktrap algorithm, to the problem of classification on the Yelp dataset.
 %------------------------------------------------
 
 \section{Data}
@@ -154,7 +157,7 @@ The LDA is a three-level hierarchical Bayesian model. The basic idea that docume
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\linewidth]{LDA.png}
+\includegraphics[width=0.8\linewidth]{img/LDA.png}
 \caption{Graphical Model Representation of LDA}
 \end{figure}
 
@@ -180,6 +183,7 @@ $$ q(z_{di} = k) = \phi_{d_{w_{di}k}} \quad q(\theta_d) = \text{Dir}(\theta_d,\g
 \State Define $\rho_t \equiv (\tau_0 + t)^{-\kappa}$
 \State Initalise $\boldsymbol{\lambda}$ randomly
 \State Sample a batch $\mathcal{S}$ of documents of size S
+\For{$t$=0 to $|D|/|\mathcal{S}|$}
 \For {$d$ in $\mathcal{S}$}
 \While {$\gamma_(d)$ hasn't converged}
 \State Set $\phi^{(d)}_{twk} \propto \exp\{\mathbb{E}_q\log\theta_{tk} + \mathbb{E}_q\log\beta_{kw}\}$
@@ -188,8 +192,7 @@ $$ q(z_{di} = k) = \phi_{d_{w_{di}k}} \quad q(\theta_d) = \text{Dir}(\theta_d,\g
 \State Compute $\tilde{\lambda}_{kw} = \eta +\frac{D}{S}n_{tw}\phi^{(d)}_{twk}$
 \EndFor
 \State $\boldsymbol{\lambda} = (1-\rho_t)\boldsymbol{\lambda}+\rho_t\boldsymbol{\tilde{\lambda}}$
-\State $t = t+1$
-\State \textbf{goto} 3 and repeat until all documents are observed.
+\EndFor
 \end{algorithmic}
 \end{algorithm}
 
@@ -210,7 +213,7 @@ $$\text{perp}_{OVI} = -6.78 \quad \text{and} \quad \text{perp}_{GS} = -6.45$$
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{V.png}
+\includegraphics[width=1\linewidth]{img/V.png}
 \caption{Cross Validation over the number of Topics}
 \end{figure}
 
@@ -219,7 +222,7 @@ Another way to assess the performance of our LDA was to inspect the topics outpu
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{topics.png}
+\includegraphics[width=1\linewidth]{img/topics.png}
 \caption{Topics extracted from the Las Vegas reviews using OVI}
 \end{figure} 
 
@@ -232,6 +235,163 @@ We now present two different approaches to answer the question of classification
 
 %------------------------------------------------
 \section{Supervised Classification}
+
+Once the feature have been extracted, we can apply supervised learning methods to classify the Yelp restaurants considering the category labels as output. Several approaches are possible to solve this multi-labels classiffication task depending on the nature and patterns of the features.
+
+\subsection{Approach}
+
+The features are divided into two main parts: on one hand, the topics assignements extracted from the reviews with the LDA and on the other hand, the properties provided by Yelp. Pre-processing the latter part provided a 198 dimensional vector. These features contain both numerical values (rating, space coordinates, number of reviews, customer check-in...) and categorical ones which we converted into indicator variables.\\
+
+Given our numerical features, many different discriminative and generative models could be appllied on our data. Nonetheless, the indicator features are sparse and the data are really noisy. We need to consider a penalized or aggregated model to reduce overfitting.\\
+
+We chose a one-vs-all approach to tackle this multi-labels task where we build one binary classifier for each label. We then assign to the entries the labels predicted by each model. The goal is here to explore how the different models perform and to tune them to come up with the best estimator. We developped our own l2 penalized logistic regression and used sklearn for the other models.
+
+\subsection{Results}
+
+\paragraph{Dimensionality Reduction}
+
+We decided to reduce the dimension of the dataset before applying our model. We used it only on the customer check-ins counts to embed them in an euclidean space. We chose to project them because they already shared a common structure. Then, the combination of the embedded features with the latent features provided by the reviews is more consistent. We chose to apply it while keeping \textbf{95\%} of the variance which reduces the dimension from \textbf{168} to \textbf{19}.
+
+\paragraph{Models Evaluation}
+
+Here we provide the different results we obtained from our models. We ran one-vs-one classifiers for the 10 different labels which are the most represented in the Las Vegas restaurants. Then we evaluated for each classifier its accuracy and averaged them to get the evaluation metric printed in the table. We tested them on three different kinds of features provided by the reviews depending on the method used to build them. Then we ran each model on the PCA projection and on the raw data. We provided for comparaison the baseline model where we do not assign any label. This result is really high because of the skewness of the considered sample, among the 10 categories considered for 3822 restaurants the most represented (Fast Food) contains 553 entries and the least (American New) 280 entries.
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    & OVI LDA & GS LDA & NMF \\ \hline
+    Baseline: all False & 90,02 \% &  90.02 \% &  90.02 \% \\ \hline
+    Kernel rbf SVM & 90,81\% &  90.38\% &  90.38\% \\ \hline
+    Kernel rbf SVM + PCA & 90.83\% &  90.60\% &  90.57\% \\ \hline
+    Logistic Regression & 90.84\% &  91.89\%  &  91.24\%\\ \hline
+    Logistic Regression + PCA & 92.59\% &  92.53\% &  92.68\% \\ \hline
+    Lasso & 90.82\% &  93.44\% &  92.01\% \\ \hline
+	Lasso + PCA & 93.44\%  &  \textbf{94.46} \%  &  93.08\% \\ \hline
+    Random Forest & 92.12\% &  93.58\% &  93.37\% \\ \hline
+    Random Forest + PCA & 92.84\% &  94.66\% &  94.06\% \\ \hline
+    \end{tabular}
+\end{center}
+\caption{Classification results for different features}
+\end{figure}
+
+The first learning of this comparative study is the differences between each kind of feature. The models built with the GS features seems to outperform on average the two other which perform similarly to each other. These results are not surprising as the variationnal inference learns the closest model to the underlying one in terms of KL divergence. With the Gibbs sampling approach, we approximate the true underlying distribution at each iteration to refine our estimator. As a result, the latter method is by nature better to find the best model as long as it has enough iteration to converge and there actually exists an underlying mixture models. Nevertheless, the OVI remains a good proxy with regard to its time execution (53s against 50min for the Gibbs Sampler).\\
+
+Then, if we compare the models to each other. The support vector machine performs poorly, the linear version was even closer to the baseline. This confirms that the data are not linearly separable and even their projection by the rbf function used in sklearn library (gamma function) is quite impossible to separate. The logistic regression performs better under the l1 penalization because of our sparse feature. Lastly, the random forest managed to reduce the common overfitting of the decision trees while aggregating them and provides on the PCA projection a very good estimator.\\
+
+We plotted here the ROC curves of the Random forest for the 10 classes considered. The ranking of the area under the curve is almost the same that the descending ranking by number of positive elements for each classe.This shows that the more positive elements we have the better classifies the model. Nonethelless, trying to learn the model on a smaller and more balanced train set for the classes with a low number of positive elements does not improve the classification accuracy.
+
+\begin{figure}[H]
+	\includegraphics[scale=0.55]{img/roc_rf.png}
+	\centering
+	\caption{Roc curve for the Random Forest one-vs-all classifiers}
+\end{figure}
+
+TODO: analysis on the ROC curves
+
+\paragraph{Feature Importance}
+
+Once we found a sufficiantly good estimator, we can investigate the weights it assigns to each feature. This could provide an answer to two important questions: \textit{Are the feature extracted from the reviews more relevant than the one provided by Yelp to classify the restaurants by category? Among the features extracted by the review, can we identify for each category one or several highly discriminative features?} Moreover, we can compare the performance of the two different LDA we used.\\
+
+We answer these questions with a comparative study on four specific categories (Fast Food, Pizza, Nightlife and Bars) with a Random Forest on four kinds of features, depending on the type of LDA used and the reduction with a PCA. The results with the features built with an NMF are similar to those with the OVI. We used the measure provided by scikit learn to evaluate the importance of the features. It is defined as the total decrease in node impurity averaged over all trees of the ensemble.
+
+\begin{figure}[H]
+\centering
+\subfigure{
+\includegraphics[scale=0.24]{img/fast_food_ovi.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/pizza_ovi.png}
+}
+\subfigure{
+\includegraphics[scale=0.24]{img/nightlife_ovi.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/bars_ovi.png}
+}
+%
+\caption{Importance of the OVI LDA features in the one-vs-all Random Forest classification}
+\label{fig:figure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfigure{
+\includegraphics[scale=0.24]{img/fast_food_ovi_pca.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/pizza_ovi_pca.png}
+}
+\subfigure{
+\includegraphics[scale=0.24]{img/nightlife_ovi_pca.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/bars_ovi_pca.png}
+}
+%
+\caption{Importance of the OVI LDA features with PCA in the one-vs-all Random Forest classification}
+\label{fig:figure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfigure{
+\includegraphics[scale=0.24]{img/fast_food_gs.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/pizza_gs.png}
+}
+\subfigure{
+\includegraphics[scale=0.24]{img/nightlife_gs.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/bars_gs.png}
+}
+%
+\caption{Importance of the GS LDA features in the one-vs-all Random Forest classification}
+\label{fig:figure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfigure{
+\includegraphics[scale=0.24]{img/fast_food_gs_pca.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/pizza_gs_pca.png}
+}
+\subfigure{
+\includegraphics[scale=0.24]{img/nightlife_gs_pca.png}
+}
+\quad
+\subfigure{
+\includegraphics[scale=0.24]{img/bars_gs_pca.png}
+}
+%
+\caption{Importance of the GS LDA features with PCA in the one-vs-all Random Forest classification}
+\label{fig:figure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{img/gs_topics.png}
+\caption{Topics extracted from the Las Vegas reviews using GS}
+\end{figure}
+
+First, considering the results for the OVI features, we observe that some properties provided by Yelp are discriminative for our classification. For example, the attribute \textit{Good for Kids} helps to sort the Bars and the Nightlife categories which is not surprising. The Fast Food may be the restaurants with the largest number of reviews as they have the largest number of customers, the model confirms this with the high weight on the \textit{reviews\_count}. This is also a cheap restaurant, hence the importance of the price range. As a result, it is worth considering the features provided by Yelp as they help discriminate the entries.\\
+
+Second, for the categories Pizza with the features extracted by the OVI we observe a discriminative feature which matchs the one about Pizza provided in the figure 3. Then, for the same LDA method, there is no discriminative feature for the other categories. Now, if we consider the results for the GS features, each category has a highly discriminative feature. Moreover, if we look at the most common words for each of these topics in the figure 10, we naturally understand their importance in the classification. This result confirms our analysis on the models. The Gibbs sampling method provides a finer topic distribution over the documents (here it is a labels distribution over the restaurants).
+
+Lastly, it is worth noticing the effect of the PCA on the importance of the features. For both the OVI and the GS, if we consider the category pizza, the results with the PCA are much more clear-cut. The weight of the most important feature and its difference with those of the other features are higher. We can explain this because the projection gives more structure to the data and reduces the noise.\\
+
+This part was about confronting our data to supervised methods to grasp their patterns and also coming up with a good classification. We provided empirical results to confirm the difference between the two most common LDA methods and proved that with the Gibbs sampling, the LDA can be really efficient to find the underlying topics of a set of documents, being much butter than a matrix factorization method. Related to our problem, it shows us that the features contain some information, but the LDA features remain more important to find the labels of a restaurant.
 
 \section{Unsupervised Clustering}
 \subsection{Approach}
@@ -272,12 +432,12 @@ $$\frac{1}{n_\mathcal{C}}\sum\limits_{\mathcal{C}\in\mathcal{P}_{k}}\sum\limits_
 
 \subsection{Results}
 
-Running the algorithm from the \emph{igraph} in R, we outputted a dendogram (cf. Figure 3) representing the obtained clustering. We colored the tag of each business for a better readability.  It is not yet entirely clear to us how to get the optimum number of clusters. We were puzzled to see that the Walktrap algorithm indicated that a cut into 3 big clusters represented the optimum partition. Knowing the structure of the sampled restaurants, we decided to further investigate the dendogram. As one can see on Figure 3, cutting the tree at different heights, we can obtain 5 clear colored communities, corresponding to 5 of the 6 tags we pre-selected.\\
+We ran the algorithm from the \emph{igraph} package in R on the three graphs generated with the three approaches mentionned above (NMF, OVI LDA, GS LDA). The results where extremely similar. We outputted a dendogram (cf. Figure 3) representing the obtained clustering. We colored the tag of each business for a better readability.  It is not yet entirely clear to us how to get the optimum number of clusters. We were puzzled to see that the Walktrap algorithm indicated that a cut into three big clusters represented the optimum partition. Knowing the structure of the sampled restaurants, we decided to further investigate the dendogram. As one can see on Figure 3, cutting the tree at different heights, we can obtain five clear colored communities, corresponding to five of the six tags we pre-selected.\\
 
 \noindent We summarized this classification using a confusion matrix: 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{confusion}
+\includegraphics[width=1\linewidth]{img/confusion}
 \caption{Confusion Matrix using the Walktrap Algorithm}
 \end{figure}
 
@@ -287,13 +447,19 @@ Running the algorithm from the \emph{igraph} in R, we outputted a dendogram (cf.
 
 \begin{figure*}
 \centering
-\includegraphics[angle=90,width=0.25\linewidth]{den_ovi2-1.png}
+\includegraphics[angle=90,width=0.25\linewidth]{img/den_ovi2-1.png}
 \caption{Dendogram outputted by the Walktrap Algorithm}
 \end{figure*}
 
 
 \section{Next steps}
-Futur work could focus on the sub-cliques and try to get a finer classification by combining them with other features like check-ins, parking availability, etc. As a variant, we could also try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses.
+
+So far, we managed to extract the categories of the restaurants as latent features with a latent dirichlet allocation algorithm on the aggregated reviews for each restaurant. \\
+
+Futur work could focus on the sub-cliques and try to get a finer classification by combining them with other features like check-ins, parking availability, etc. As a variant, we could also try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses.\\
+
+As a variant, we could try a supervised LDA, where we use the existing categories as a response variable associated with each document and infer the joint model of the documents and the responses. Lastly, this method is applicable on each review separately to predict the rating of the review, with a supervised lda also to avoid the predominance of the categories in the topics.
+
 
 \section{conclusion}
 By using a combination of unsupervised learning and graph theory, we managed to retrieve most of the original classification that is up to now still done by hand ! This work could result in an automation tool for Yelp to label properly its database. 
