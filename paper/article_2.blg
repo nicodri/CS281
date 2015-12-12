@@ -1,70 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: article_2.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
-I was expecting a `,' or a `}'---line 7 of file sample.bib
- :  
- :  pages = {993-1022}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 21 of file sample.bib
- :  
- :  volume = {10}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 27 of file sample.bib
- :   
- :   title = {{S}treaming {V}ariational {B}ayes}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--empty journal in OLLD
 Too many commas in name 1 of "Tamara Broderick, Nicholas Boyd, Andre Wibisono, Ashia C. Wilson, Michael I. Jordan" for entry svi
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Tamara Broderick, Nicholas Boyd, Andre Wibisono, Ashia C. Wilson, Michael I. Jordan" for entry svi
 while executing---line 944 of file unsrt.bst
-Warning--empty title in svi
 Warning--empty journal in svi
-Warning--empty year in svi
-You've used 4 entries,
+You've used 6 entries,
             1791 wiz_defined-function locations,
-            464 strings with 3909 characters,
-and the built_in function-call counts, 529 in all, are:
-= -- 39
-> -- 16
+            481 strings with 4410 characters,
+and the built_in function-call counts, 1329 in all, are:
+= -- 104
+> -- 74
 < -- 0
-+ -- 8
-- -- 4
-* -- 21
-:= -- 100
-add.period$ -- 10
-call.type$ -- 4
-change.case$ -- 3
++ -- 28
+- -- 22
+* -- 94
+:= -- 236
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 6
 chr.to.int$ -- 0
 cite$ -- 8
-duplicate$ -- 32
-empty$ -- 57
-format.name$ -- 4
-if$ -- 108
+duplicate$ -- 52
+empty$ -- 121
+format.name$ -- 22
+if$ -- 277
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 21
-num.names$ -- 4
-pop$ -- 16
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 33
+num.names$ -- 6
+pop$ -- 14
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 13
+skip$ -- 19
 stack$ -- 0
-substring$ -- 0
-swap$ -- 2
+substring$ -- 88
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 4
-width$ -- 5
-write$ -- 37
-(There were 5 error messages)
+warning$ -- 2
+while$ -- 11
+width$ -- 7
+write$ -- 64
+(There were 2 error messages)

@@ -3,7 +3,7 @@
 \bibitem{LDA}
 M.~Jordan D.~Blei, A.~Ng.
 \newblock {L}atent {D}irichlet {A}llocation.
-\newblock {\em Journal of Machine Learning Research}, 3, 2003.
+\newblock {\em Journal of Machine Learning Research}, 3:993--1022, 2003.
 
 \bibitem{OLLD}
 D.~Bach M.~Hoffman, D.~Blei.
@@ -13,11 +13,25 @@ D.~Bach M.~Hoffman, D.~Blei.
 \bibitem{svi}
 Andre Wibisono Ashia C. Wilson Michael I.~Jordan Tamara~Broderick,
   Nicholas~Boyd.
+\newblock {S}treaming {V}ariational {B}ayes.
+\newblock 2013.
+
+\bibitem{sklearn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
 
 \bibitem{Gr}
 M.~Latapy P.~Pons.
 \newblock {C}omputing {Communities} in {L}arge {N}etworks {U}sing {R}andom
   {W}alks.
-\newblock {\em JGAA}, 2006.
+\newblock {\em JGAA}, 10:191--218, 2006.
+
+\bibitem{igr}
+Gabor Csardi and Tamas Nepusz.
+\newblock The igraph software package for complex network research.
+\newblock {\em InterJournal}, Complex Systems:1695, 2006.
 
 \end{thebibliography}
