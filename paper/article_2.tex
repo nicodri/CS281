@@ -271,9 +271,9 @@ Once the features have been extracted, we can apply supervised learning methods 
     Logistic Regression & 91.39\%  &  91.86\%  &  91.86\%\\ \hline
     Logistic Regression + PCA & 92.37\%  &  92.89\%  &  93.16\% \\ \hline
     Lasso & 91.18\%  &  93.75\%  &  92.40\% \\ \hline
-	Lasso + PCA & 92.53\%  &  94.83\%  &  93.35\% \\ \hline
+	Lasso + PCA & 92.53\%  &  \textbf{94.83}\%  &  93.35\% \\ \hline
     Random Forest & 92.12\% &  93.58\% &  93.37\% \\ \hline
-    Random Forest + PCA & 92.84\% &  \textbf{94.66} \% &  94.06\% \\ \hline
+    Random Forest + PCA & 92.84\% &  94.66 \% &  94.06\% \\ \hline
     \end{tabular}
 \end{center}
 \caption{Classification results for different features}
@@ -281,7 +281,7 @@ Once the features have been extracted, we can apply supervised learning methods 
 
 \noindent The first outcome of this comparative study is the differences between each feature extraction method. The model built with the GS features seems to outperform on average the other two, which perform similarly to each other. These results are not surprising as the variationnal inference learns the closest model to the underlying one in terms of KL divergence. With the Gibbs sampling approach, we approximate the true underlying distribution at each iteration to refine our estimator. As a result, the latter method is by nature better to find the best model as long as it has enough iteration to converge and there actually exists an underlying mixture models. Nevertheless, the OVI remains a good proxy with regard to its time execution (53s against 50min for the Gibbs Sampler).\\
 
-\noindent If we then compare the models to each other, we see that the support vector machine performs poorly and that the linear version was even closer to the baseline. This confirms that the data is not linearly separable and even their projection by the rbf function used in sklearn library (gamma function) is quite impossible to separate. The logistic regression performs better under the l1 penalization because of the sparsity of our features. Lastly, the random forest managed to reduce the common overfitting of the decision trees while aggregating them and provides on the PCA projection the best estimator.\\
+\noindent If we then compare the models to each other, we see that the support vector machine performs poorly and that the linear version was even closer to the baseline. This confirms that the data is not linearly separable and even their projection by the rbf function used in sklearn library (gamma function) is quite impossible to separate. The logistic regression performs better under the l1 penalization because of the sparsity of our features. Lastly, the random forest managed to reduce the common overfitting of the decision trees while aggregating them and provides on the PCA projection a very good estimator.\\
 
 \noindent We plotted here the ROC curves of the Random forest for the 10 classes considered. The ranking with respect to the area under the curve is very close to the one induced by the number of positive elements for each class.This shows that the more positive elements we have, the better the model actually performs. Nonetheless, trying to learn the model on a smaller and more balanced train set for the classes with a low number of positive elements does not improve the classification accuracy.
 
