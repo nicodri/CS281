@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.9.2)  11 DEC 2015 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.2)  11 DEC 2015 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -77,7 +77,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -196,17 +196,25 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvips.def on input line 94.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count107
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count107
+\c@float@type=\count108
 \float@exts=\toks18
 \float@box=\box52
 \@float@everytoks=\toks19
@@ -222,8 +230,8 @@ Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 Package hobsub Info: Skipping package `ifvtex' (already loaded).
@@ -241,7 +249,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -265,13 +273,13 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen143
-\Hy@linkcounter=\count108
-\Hy@pagecounter=\count109
+\Hy@linkcounter=\count109
+\Hy@pagecounter=\count110
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count110
+\Hy@SavedSpaceFactor=\count111
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -283,7 +291,7 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count111
+\c@Hy@tempcnt=\count112
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
@@ -291,7 +299,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen144
-\Fld@menulength=\count112
+\Fld@menulength=\count113
 \Field@Width=\dimen145
 \Fld@charsize=\dimen146
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -303,23 +311,15 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count113
-\c@Item=\count114
-\c@Hfootnote=\count115
+\Hy@abspage=\count114
+\c@Item=\count115
+\c@Hfootnote=\count116
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2012/11/06 v6.83m Hyperref driver for dvips
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2012/11/06 v6.83m Hyperref definitions for pdfmark specials
-\pdf@docset=\toks20
-\pdf@box=\box54
-\pdf@toks=\toks21
-\pdf@defaulttoks=\toks22
-\HyField@AnnotCount=\count116
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count117
 \c@bookmark@seq@number=\count118
 
@@ -329,7 +329,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip50
-))
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip51
@@ -340,7 +340,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks23
+\@emptytoks=\toks20
 \ex@=\dimen147
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -360,8 +360,8 @@ LaTeX Info: Redefining \overline on input line 306.
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box55
-\strutbox@=\box56
+\Mathstrutbox@=\box54
+\strutbox@=\box55
 \big@size=\dimen149
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
@@ -370,21 +370,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip11
 \c@parentequation=\count126
 \dspbrk@lvl=\count127
-\tag@help=\toks24
+\tag@help=\toks21
 \row@=\count128
 \column@=\count129
 \maxfields@=\count130
-\andhelp@=\toks25
+\andhelp@=\toks22
 \eqnshift@=\dimen150
 \alignsep@=\dimen151
 \tagshift@=\dimen152
 \tagwidth@=\dimen153
 \totwidth@=\dimen154
 \lineht@=\dimen155
-\@envbody=\toks26
+\@envbody=\toks23
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks27
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -397,15 +397,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2015/03/04 v2.20.2
-\thm@style=\toks28
-\thm@bodyfont=\toks29
-\thm@headfont=\toks30
-\thm@notefont=\toks31
-\thm@headpunct=\toks32
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
 \thm@preskip=\skip54
 \thm@postskip=\skip55
 \thm@headsep=\skip56
-\dth@everypar=\toks33
+\dth@everypar=\toks30
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lettrine/lettrine.sty
 File: lettrine.sty 2015/02/16 v1.8 (Daniel Flipo)
@@ -415,8 +415,8 @@ File: lettrine.sty 2015/02/16 v1.8 (Daniel Flipo)
 \DefaultNindent=\dimen157
 \DefaultSlope=\dimen158
 \DiscardVskip=\dimen159
-\L@lbox=\box57
-\L@tbox=\box58
+\L@lbox=\box56
+\L@tbox=\box57
 \c@L@lines=\count133
 \c@L@depth=\count134
 \L@Pindent=\dimen160
@@ -475,7 +475,7 @@ nment
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks34
+\@float@every@algorithm=\toks31
 \c@algorithm=\count142
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
@@ -499,12 +499,12 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box59
+\ttl@box=\box58
 \beforetitleunit=\skip71
 \aftertitleunit=\skip72
 \ttl@plus=\dimen174
 \ttl@minus=\dimen175
-\ttl@toksa=\toks35
+\ttl@toksa=\toks32
 \titlewidth=\dimen176
 \titlewidthlast=\dimen177
 \titlewidthfirst=\dimen178
@@ -558,10 +558,12 @@ LaTeX Font Info:    Try loading font information for T1+pplx on input line 83.
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
 LaTeX Info: Redefining \microtypecontext on input line 83.
-Package microtype Info: Generating DVI output.
+Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: No font expansion.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -570,9 +572,9 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -608,15 +610,44 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count150
+\scratchdimen=\dimen179
+\scratchbox=\box59
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen180
+\MPnumerator=\count154
+\makeMPintoPDFobject=\count155
+\everyMPtoPDFconversion=\toks34
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \AtBeginShipoutBox=\box60
 Package hyperref Info: Link coloring OFF on input line 83.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count150
+\c@section@level=\count156
 )
 LaTeX Info: Redefining \ref on input line 83.
 LaTeX Info: Redefining \pageref on input line 83.
@@ -626,13 +657,10 @@ LaTeX Info: Redefining \nameref on input line 83.
 \@outlinefile=\write3
 \openout3 = `article_2.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 86.
 LaTeX Font Info:    Try loading font information for OT1+pplx on input line 86.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
@@ -714,7 +742,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-[1
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
@@ -738,21 +766,11 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 152.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 152.
-
-! LaTeX Error: Cannot determine size of graphic in img/LDA.png (no BoundingBox)
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164 ...raphics[width=0.8\linewidth]{img/LDA.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/LDA.png Graphic file (type eps)
-<img/LDA.png>
+<img/LDA.png, id=83, 405.515pt x 181.67876pt>
+File: img/LDA.png Graphic file (type png)
+ <use img/LDA.png>
+Package pdftex.def Info: img/LDA.png used on input line 164.
+(pdftex.def)             Requested size: 203.57547pt x 91.20784pt.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 165.
 
@@ -776,40 +794,22 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 194
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2]
+) [2 <./img/LDA.png>] <img/V.png, id=104, 428.60126pt x 289.08pt>
+File: img/V.png Graphic file (type png)
+ <use img/V.png>
+Package pdftex.def Info: img/V.png used on input line 221.
+(pdftex.def)             Requested size: 254.46837pt x 171.63199pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/V.png (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221 ...udegraphics[width=1\linewidth]{img/V.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/V.png Graphic file (type eps)
-<img/V.png>
 Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
+<img/topics.png, id=105, 768.8725pt x 939.51pt>
+File: img/topics.png Graphic file (type png)
+ <use img/topics.png>
+Package pdftex.def Info: img/topics.png used on input line 230.
+(pdftex.def)             Requested size: 254.46837pt x 310.94241pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/topics.png (no BoundingB
-ox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.230 ...aphics[width=1\linewidth]{img/topics.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/topics.png Graphic file (type eps)
-<img/topics.png>
 Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
@@ -819,7 +819,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
  []
 
-[3]
+[3 <./img/V.png> <./img/topics.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
@@ -833,9 +833,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
 Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
-
-
-LaTeX Warning: Citation `sklearn' on page 4 undefined on input line 251.
 
 
 Overfull \hbox (26.73157pt too wide) in paragraph at lines 265--278
@@ -852,285 +849,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
+<img/roc_rf.png, id=127, 450.68375pt x 505.89pt>
+File: img/roc_rf.png Graphic file (type png)
+ <use img/roc_rf.png>
+Package pdftex.def Info: img/roc_rf.png used on input line 289.
+(pdftex.def)             Requested size: 247.87682pt x 278.24034pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/roc_rf.png (no BoundingB
-ox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.289 ...cludegraphics[scale=0.55]{img/roc_rf.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/roc_rf.png Graphic file (type eps)
-<img/roc_rf.png>
 Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
+<img/fast_food_ovi.png, id=128, 611.28375pt x 272.01625pt>
+File: img/fast_food_ovi.png Graphic file (type png)
 
-! LaTeX Error: Cannot determine size of graphic in img/fast_food_ovi.png (no Bo
-undingBox).
+<use img/fast_food_ovi.png>
+Package pdftex.def Info: img/fast_food_ovi.png used on input line 305.
+(pdftex.def)             Requested size: 146.71109pt x 65.28523pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.305 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/pizza_ovi.png, id=129, 609.27625pt x 264.99pt>
+File: img/pizza_ovi.png Graphic file (type png)
+ <use img/pizza_ovi.png>
+Package pdftex.def Info: img/pizza_ovi.png used on input line 309.
+(pdftex.def)             Requested size: 146.22928pt x 63.59889pt.
 
-File: img/fast_food_ovi.png Graphic file (type eps)
-<img/fast_food_ovi.png>
+<img/nightlife_ovi.png, id=130, 600.2425pt x 266.9975pt>
+File: img/nightlife_ovi.png Graphic file (type png)
 
-! LaTeX Error: Cannot determine size of graphic in img/pizza_ovi.png (no Boundi
-ngBox).
+<use img/nightlife_ovi.png>
+Package pdftex.def Info: img/nightlife_ovi.png used on input line 312.
+(pdftex.def)             Requested size: 144.06114pt x 64.0807pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.309 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/bars_ovi.png, id=131, 612.2875pt x 266.9975pt>
+File: img/bars_ovi.png Graphic file (type png)
+ <use img/bars_ovi.png>
+Package pdftex.def Info: img/bars_ovi.png used on input line 316.
+(pdftex.def)             Requested size: 146.952pt x 64.0807pt.
 
-File: img/pizza_ovi.png Graphic file (type eps)
-<img/pizza_ovi.png>
+<img/fast_food_ovi_pca.png, id=132, 598.235pt x 241.90375pt>
+File: img/fast_food_ovi_pca.png Graphic file (type png)
 
-! LaTeX Error: Cannot determine size of graphic in img/nightlife_ovi.png (no Bo
-undingBox).
+<use img/fast_food_ovi_pca.png>
+Package pdftex.def Info: img/fast_food_ovi_pca.png used on input line 326.
+(pdftex.def)             Requested size: 143.57933pt x 58.05807pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.312 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/pizza_ovi_pca.png, id=133, 595.22375pt x 241.90375pt>
+File: img/pizza_ovi_pca.png Graphic file (type png)
 
-File: img/nightlife_ovi.png Graphic file (type eps)
-<img/nightlife_ovi.png>
+<use img/pizza_ovi_pca.png>
+Package pdftex.def Info: img/pizza_ovi_pca.png used on input line 330.
+(pdftex.def)             Requested size: 142.85661pt x 58.05807pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/bars_ovi.png (no Boundin
-gBox).
+<img/nightlife_ovi_pca.png, id=134, 604.2575pt x 242.9075pt>
+File: img/nightlife_ovi_pca.png Graphic file (type png)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.316 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use img/nightlife_ovi_pca.png>
+Package pdftex.def Info: img/nightlife_ovi_pca.png used on input line 333.
+(pdftex.def)             Requested size: 145.02477pt x 58.29898pt.
 
-File: img/bars_ovi.png Graphic file (type eps)
-<img/bars_ovi.png>
+<img/bars_ovi_pca.png, id=135, 608.2725pt x 244.915pt>
+File: img/bars_ovi_pca.png Graphic file (type png)
 
-! LaTeX Error: Cannot determine size of graphic in img/fast_food_ovi_pca.png (n
-o BoundingBox).
+<use img/bars_ovi_pca.png>
+Package pdftex.def Info: img/bars_ovi_pca.png used on input line 337.
+(pdftex.def)             Requested size: 145.98837pt x 58.78079pt.
+ [5 <./img/roc_rf.png> <./img/fast_food_ovi.png> <./img/pizza_ovi.png> <./img/n
+ightlife_ovi.png> <./img/bars_ovi.png>]
+<img/fast_food_gs.png, id=151, 611.28375pt x 268.00125pt>
+File: img/fast_food_gs.png Graphic file (type png)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.326 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use img/fast_food_gs.png>
+Package pdftex.def Info: img/fast_food_gs.png used on input line 347.
+(pdftex.def)             Requested size: 146.71109pt x 64.32161pt.
+ <img/pizza_gs.png, id=152, 598.235pt x 271.0125pt>
+File: img/pizza_gs.png Graphic file (type png)
 
-File: img/fast_food_ovi_pca.png Graphic file (type eps)
-<img/fast_food_ovi_pca.png>
+<use img/pizza_gs.png>
+Package pdftex.def Info: img/pizza_gs.png used on input line 351.
+(pdftex.def)             Requested size: 143.57933pt x 65.04433pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/pizza_ovi_pca.png (no Bo
-undingBox).
+<img/nightlife_gs.png, id=153, 612.2875pt x 270.00874pt>
+File: img/nightlife_gs.png Graphic file (type png)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.330 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use img/nightlife_gs.png>
+Package pdftex.def Info: img/nightlife_gs.png used on input line 354.
+(pdftex.def)             Requested size: 146.952pt x 64.8034pt.
 
-File: img/pizza_ovi_pca.png Graphic file (type eps)
-<img/pizza_ovi_pca.png>
+<img/bars_gs.png, id=154, 601.24625pt x 274.02374pt>
+File: img/bars_gs.png Graphic file (type png)
+ <use img/bars_gs.png>
+Package pdftex.def Info: img/bars_gs.png used on input line 358.
+(pdftex.def)             Requested size: 144.30203pt x 65.76703pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/nightlife_ovi_pca.png (n
-o BoundingBox).
+<img/fast_food_gs_pca.png, id=155, 612.2875pt x 249.93375pt>
+File: img/fast_food_gs_pca.png Graphic file (type png)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.333 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use img/fast_food_gs_pca.png>
+Package pdftex.def Info: img/fast_food_gs_pca.png used on input line 368.
+(pdftex.def)             Requested size: 146.952pt x 59.98532pt.
 
-File: img/nightlife_ovi_pca.png Graphic file (type eps)
-<img/nightlife_ovi_pca.png>
+<img/pizza_gs_pca.png, id=156, 602.25pt x 245.91875pt>
+File: img/pizza_gs_pca.png Graphic file (type png)
 
-! LaTeX Error: Cannot determine size of graphic in img/bars_ovi_pca.png (no Bou
-ndingBox).
+<use img/pizza_gs_pca.png>
+Package pdftex.def Info: img/pizza_gs_pca.png used on input line 372.
+(pdftex.def)             Requested size: 144.54294pt x 59.0217pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.337 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/nightlife_gs_pca.png, id=157, 601.24625pt x 246.9225pt>
+File: img/nightlife_gs_pca.png Graphic file (type png)
 
-File: img/bars_ovi_pca.png Graphic file (type eps)
-<img/bars_ovi_pca.png>
+<use img/nightlife_gs_pca.png>
+Package pdftex.def Info: img/nightlife_gs_pca.png used on input line 375.
+(pdftex.def)             Requested size: 144.30203pt x 59.2626pt.
 
-! LaTeX Error: Cannot determine size of graphic in img/fast_food_gs.png (no Bou
-ndingBox).
+<img/bars_gs_pca.png, id=158, 610.28pt x 242.9075pt>
+File: img/bars_gs_pca.png Graphic file (type png)
+ <use img/bars_gs_pca.png>
+Package pdftex.def Info: img/bars_gs_pca.png used on input line 379.
+(pdftex.def)             Requested size: 146.47018pt x 58.29898pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.347 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/gs_topics.png, id=159, 698.61pt x 512.91624pt>
+File: img/gs_topics.png Graphic file (type png)
+ <use img/gs_topics.png>
+Package pdftex.def Info: img/gs_topics.png used on input line 387.
+(pdftex.def)             Requested size: 254.46837pt x 186.83328pt.
 
-File: img/fast_food_gs.png Graphic file (type eps)
-<img/fast_food_gs.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/pizza_gs.png (no Boundin
-gBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.351 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/pizza_gs.png Graphic file (type eps)
-<img/pizza_gs.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/nightlife_gs.png (no Bou
-ndingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.354 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/nightlife_gs.png Graphic file (type eps)
-<img/nightlife_gs.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/bars_gs.png (no Bounding
-Box).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.358 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/bars_gs.png Graphic file (type eps)
-<img/bars_gs.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/fast_food_gs_pca.png (no
- BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.368 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/fast_food_gs_pca.png Graphic file (type eps)
-<img/fast_food_gs_pca.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/pizza_gs_pca.png (no Bou
-ndingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.372 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/pizza_gs_pca.png Graphic file (type eps)
-<img/pizza_gs_pca.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/nightlife_gs_pca.png (no
- BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.375 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/nightlife_gs_pca.png Graphic file (type eps)
-<img/nightlife_gs_pca.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/bars_gs_pca.png (no Boun
-dingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.379 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/bars_gs_pca.png Graphic file (type eps)
-<img/bars_gs_pca.png>
-
-! LaTeX Error: Cannot determine size of graphic in img/gs_topics.png (no Boundi
-ngBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.387 ...ics[width=1\linewidth]{img/gs_topics.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/gs_topics.png Graphic file (type eps)
-<img/gs_topics.png>
 Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
-[5]
+[6 <./img/fast_food_ovi_pca.png> <./img/pizza_ovi_pca.png> <./img/nightlife_ovi
+_pca.png> <./img/bars_ovi_pca.png> <./img/fast_food_gs.png> <./img/pizza_gs.png
+> <./img/nightlife_gs.png> <./img/bars_gs.png> <./img/fast_food_gs_pca.png> <./
+img/pizza_gs_pca.png> <./img/nightlife_gs_pca.png> <./img/bars_gs_pca.png> <./i
+mg/gs_topics.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 395--396
 
  []
@@ -1160,33 +1011,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
-
-
-LaTeX Warning: Citation `igr' on page 7 undefined on input line 438.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
-
-! LaTeX Error: File `img/confusion' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.443 ...raphics[width=1\linewidth]{img/confusion}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<img/confusion.png, id=205, 346.29375pt x 329.23pt>
+File: img/confusion.png Graphic file (type png)
+ <use img/confusion.png>
+Package pdftex.def Info: img/confusion.png used on input line 443.
+(pdftex.def)             Requested size: 254.46837pt x 241.93341pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
@@ -1202,27 +1041,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
-[7] (./article_2.bbl) [8]
-
-! LaTeX Error: Cannot determine size of graphic in img/den_ovi2-1.png (no Bound
-ingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.477 ...width=0.25\linewidth]{img/den_ovi2-1.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: img/den_ovi2-1.png Graphic file (type eps)
-<img/den_ovi2-1.png>
+[8 <./img/confusion.png>] (./article_2.bbl) [9]
+<img/den_ovi2-1.png, id=217, 14052.5pt x 3011.25pt>
+File: img/den_ovi2-1.png Graphic file (type png)
+ <use img/den_ovi2-1.png>
+Package pdftex.def Info: img/den_ovi2-1.png used on input line 477.
+(pdftex.def)             Requested size: 14052.46594pt x 3011.24269pt.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 481.
- [9]
+
+[10 <./img/den_ovi2-1.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 481.
  (./article_2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 481.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 481.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 481.
 Package rerunfilecheck Info: File `article_2.out' has not changed.
 (rerunfilecheck)             Checksum: CEE99094E67D47EEAAD5E3B6E81AE553;954.
@@ -1231,20 +1061,36 @@ Package rerunfilecheck Info: File `article_2.out' has not changed.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 481.
  ) 
 Here is how much of TeX's memory you used:
- 10528 strings out of 493090
- 160801 string characters out of 6134869
- 392922 words of memory out of 5000000
- 13822 multiletter control sequences out of 15000+600000
- 58377 words of font info for 91 fonts, out of 8000000 for 9000
+ 11482 strings out of 493089
+ 173477 string characters out of 6134843
+ 394038 words of memory out of 5000000
+ 14365 multiletter control sequences out of 15000+600000
+ 93131 words of font info for 327 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,43p,6166b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,1084b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
+w/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/pala
+tino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/up
+lri8a.pfb>
+Output written on article_2.pdf (10 pages, 2451316 bytes).
+PDF statistics:
+ 285 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 62716 words of extra memory for PDF output out of 74296 (max. 10000000)
 
-Output written on article_2.dvi (9 pages, 60504 bytes).
