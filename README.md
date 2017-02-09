@@ -6,4 +6,4 @@ Goal of the project was to investigate how to use the restaurant reviews to auto
 
 The repo contains also our code in Python and our exploratory notebooks.
 
-See the course syllabus at: goo.gl/Qv1S6H
+course syllabus available [here](goo.gl/Qv1S6H)
